@@ -12,7 +12,7 @@
 3. Set identity
    ```bash
       git config --global user.name "DevCal2022"
-      git config --global user.email "devkag1994@gmail.com"
+      git config --global user.email "devendra.kag@calsoftinc.com"
    ```
 4. Clone repository
    ```bash
@@ -34,90 +34,62 @@
       git add .
       git add <filename>
    ```
-
 8. Commit
-
    ```bash
-git commit -m "message about commit"
+      git commit -m "message about commit"
    ```
-
 9. Push branch
-
    ```bash
-git push origin <branch_name>
+      git push origin <branch_name>
    ```
-
 10. Pull branch
-
    ```bash
-git pull origin <branch_name>
+      git pull origin <branch_name>
    ```
-
 11. Status
-
    ```bash
-git status
+      git status
    ```
-
 ## 2. Branch
-
 12. Rename branch
-
    ```bash
-git branch -m <new_name>
-# or
-git branch -m <old_branch_name> <new_branch_name>
+      git branch -m <new_name>
+      # or
+      git branch -m <old_branch_name> <new_branch_name>
    ```
-
 13. Set default branch name
-
    ```bash
-git config --global init.defaultBranch "<branch-name>"
+      git config --global init.defaultBranch "<branch-name>"
    ```
-
 14. Commit tracked changes directly
-
    ```bash
-git commit -am "commit message"
+      git commit -am "commit message"
    ```
-
 15. Unstage file
-
    ```bash
-git reset HEAD <file_name>
+      git reset HEAD <file_name>
    ```
-
 16. Discard local changes in file
-
    ```bash
-git checkout -- <file_name>
+      git checkout -- <file_name>
    ```
-
 17. Stash work in progress
-
    ```bash
-git stash
+      git stash
    ```
-
 18. Rename file in Git
-
    ```bash
-git mv <current_file_name> <new_file_name>
+      git mv <current_file_name> <new_file_name>
    ```
-
 19. Rename file outside Git
-
    ```bash
-git add -A
-git add <file_name>
+      git add -A
+      git add <file_name>
    ```
-
 20. Remove file and stage deletion
-
    ```bash
-git rm <file_name>
+      git rm <file_name>
    ```
-
 21. File deleted outside Git (use add -A / git rm through Git)
 
    ```bash
