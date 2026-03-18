@@ -91,11 +91,9 @@
       git rm <file_name>
    ```
 21. File deleted outside Git (use add -A / git rm through Git)
-
    ```bash
-git add -A
+      git add -A
    ```
-
 ## 3. History
 
 22. View history
