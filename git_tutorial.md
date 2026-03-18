@@ -1,53 +1,38 @@
 # Git Tutorial
-
 ## 1. Basic
-
 1. Check Git version
-
    ```bash
-git --version
+      git --version
    ```
-
 2. Show config
-
    ```bash
-git config --global --list
-git config --local --list
+      git config --global --list
+      git config --local --list
    ```
-
 3. Set identity
-
    ```bash
-git config --global user.name "DevCal2022"
-git config --global user.email "devkag1994@gmail.com"
+      git config --global user.name "DevCal2022"
+      git config --global user.email "devkag1994@gmail.com"
    ```
-
 4. Clone repository
-
    ```bash
-git clone <repo_url>
+      git clone <repo_url>
    ```
-
 5. Import from existing folder (manual clone alternative)
-
    ```bash
-git init <project-directory-name>
-git remote add origin <repo_url>
-git fetch origin
-git checkout <main-branch>
+      git init <project-directory-name>
+      git remote add origin <repo_url>
+      git fetch origin
+      git checkout <main-branch>
    ```
-
 6. Create branch
-
    ```bash
-git checkout -b <branch-name>
+      git checkout -b <branch-name>
    ```
-
 7. Stage files
-
    ```bash
-git add .
-git add <filename>
+      git add .
+      git add <filename>
    ```
 
 8. Commit
