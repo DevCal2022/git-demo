@@ -97,14 +97,12 @@
 ## 3. History
 
 22. View history
-
    ```bash
-git log
-git log --abbrev-commit
-git log --oneline
-git log --oneline --graph --decorate
+      git log
+      git log --abbrev-commit
+      git log --oneline
+      git log --oneline --graph --decorate
    ```
-
 - By range: `git log <commit-range>`
 - Since: `git log --since="3 days ago"`
 - File history: `git log -- <filename>`
@@ -112,11 +110,9 @@ git log --oneline --graph --decorate
 - Commit detail: `git show <commit-id>`
 
 23. Alias history command
-
    ```bash
-git config --global alias.hist "log --all --oneline --graph --decorate"
+      git config --global alias.hist "log --all --oneline --graph --decorate"
    ```
-
 24. .gitignore rules
 
    - `text.txt`
@@ -131,261 +127,186 @@ git config --global alias.hist "log --all --oneline --graph --decorate"
    2. Extract and copy to `/opt/p4merge`:
 
       ```bash
-      gunzip p4v.tgz
-      tar xvf p4v.tar
-      sudo mkdir -p /opt/p4merge
-      sudo mv /home/devendra/Downloads/p4v-2019.1.1830398/* /opt/p4merge
+         gunzip p4v.tgz
+         tar xvf p4v.tar
+         sudo mkdir -p /opt/p4merge
+         sudo mv /home/devendra/Downloads/p4v-2019.1.1830398/* /opt/p4merge
       ```
-
    3. Symlink executable:
-
       ```bash
-      sudo ln -s /opt/p4merge/bin/p4merge /usr/local/bin/p4merge
+         sudo ln -s /opt/p4merge/bin/p4merge /usr/local/bin/p4merge
       ```
-
    4. Set Git diff/merge tool:
-
       ```bash
-git config --global merge.tool p4merge
-git config --global mergetool.p4merge.path /usr/local/bin/p4merge
-git config --global mergetool.prompt false
+         git config --global merge.tool p4merge
+         git config --global mergetool.p4merge.path /usr/local/bin/p4merge
+         git config --global mergetool.prompt false
 
-git config --global diff.tool p4merge
-git config --global difftool.p4merge.path /usr/local/bin/p4merge
-git config --global difftool.prompt false
+         git config --global diff.tool p4merge
+         git config --global difftool.p4merge.path /usr/local/bin/p4merge
+         git config --global difftool.prompt false
       ```
-
    5. Use:
-
       ```bash
-git difftool
+         git difftool
       ```
-
    - For local repo config: replace `--global` with `--local`.
 
 ## 5. Comparison
 
 26. Compare changes
-
    - Working directory vs staging:
-
      ```bash
-git diff
-git difftool
+         git diff
+         git difftool
      ```
-
    - Working directory vs local HEAD:
-
      ```bash
-git diff HEAD
-git difftool HEAD
+         git diff HEAD
+         git difftool HEAD
      ```
-
    - Staging vs local HEAD:
-
      ```bash
-git diff --staged HEAD
-git difftool --staged HEAD
+         git diff --staged HEAD
+         git difftool --staged HEAD
      ```
-
 27. Single file compare:
-
    ```bash
-git diff -- <file>
-git difftool -- <file>
+      git diff -- <file>
+      git difftool -- <file>
    ```
-
 28. Between commits:
-
    ```bash
-git diff <r1> <r2>
-git diff <r1> HEAD
-git diff HEAD HEAD^
-
-git difftool <r1> <r2>
+      git diff <r1> <r2>
+      git diff <r1> HEAD
+      git diff HEAD HEAD^
+      git difftool <r1> <r2>
    ```
-
 29. Local vs remote
-
    ```bash
-git diff <local_branch> <remote_branch>
-git difftool <local_branch> <remote_branch>
+      git diff <local_branch> <remote_branch>
+      git difftool <local_branch> <remote_branch>
    ```
-
 30. Delete local branch
-
    ```bash
-git branch -d <branch_name>
+      git branch -d <branch_name>
    ```
-
 ## 6. Merge & Rebase
-
 31. Fast-forward merge
-
    ```bash
-git merge <branch_name_to_merge>
+      git merge <branch_name_to_merge>
    ```
-
    - For no fast-forward:
-
      ```bash
-git merge <branch_name_to_merge> --no-ff
+         git merge <branch_name_to_merge> --no-ff
      ```
-
 32. Recursive merge
-
    ```bash
-git merge <branch_name> -m "commit message"
+      git merge <branch_name> -m "commit message"
    ```
-
 33. Resolve conflicts
-
    - Edit files manually
    - Use `git mergetool`
-
 34. Abort merge
-
    ```bash
-git merge --abort
+      git merge --abort
    ```
-
 35. Rebase feature branch
-
    ```bash
-git rebase <source_branch>
+      git rebase <source_branch>
    ```
-
 36. Abort rebase
-
    ```bash
-git rebase --abort
+      git rebase --abort
    ```
-
 37. Pull with rebase
-
    ```bash
-git pull --rebase origin/master
+      git pull --rebase origin/master
    ```
-
 ## 7. Stashing
-
 38. Apply stash
-
    ```bash
-git stash apply
-git stash list
-git stash drop
+      git stash apply
+      git stash list
+      git stash drop
    ```
-
 39. Stash untracked changes
-
    ```bash
-git stash -u
-git stash pop
+      git stash -u
+      git stash pop
    ```
-
 40. Save stash with message
-
    ```bash
-git stash save "message"
-git stash show "stash@{index}"
+      git stash save "message"
+      git stash show "stash@{index}"
    ```
-
 41. Work with specific stash
-
    ```bash
-git stash apply stash@{n}
-git stash drop stash@{n}
+      git stash apply stash@{n}
+      git stash drop stash@{n}
    ```
-
 42. Clear all stashes
-
    ```bash
-git stash clear
+      git stash clear
    ```
-
 43. Apply stash to branch
-
    ```bash
-git stash -u
-git stash branch <branch_name>
-git add .
-git commit -m "message"
+      git stash -u
+      git stash branch <branch_name>
+      git add .
+      git commit -m "message"
    ```
-
 ## 8. Tagging
-
 44. Lightweight tag
-
    ```bash
-git tag <tag_name>
-git tag --list
-git tag --delete <tag_name>
-git show <tag_name>
+      git tag <tag_name>
+      git tag --list
+      git tag --delete <tag_name>
+      git show <tag_name>
    ```
-
 45. Annotated tag
-
    ```bash
-git tag -a <tag_name>
-# or
-git tag -a <tag_name> -m "tag message"
+      git tag -a <tag_name>
+      # or
+      git tag -a <tag_name> -m "tag message (metadata for tag)"
    ```
-
 46. Amend commit message
-
    ```bash
-git commit --amend
+      git commit --amend
    ```
-
+   Note: don't use on remote pushed branch
 47. Compare tags
-
    ```bash
-git diff <start_tag> <end_tag>
-git difftool <start_tag> <end_tag>
+      git diff <start_tag> <end_tag>
+      git difftool <start_tag> <end_tag>
    ```
-
 48. Tag specific commit
-
    ```bash
-git tag -a <tag_name> <commit>
+      git tag -a <tag_name> <commit>
    ```
-
 49. Move tag to another commit
-
    ```bash
-git tag -a <tag_name> -f <commit>
+      git tag -a <tag_name> -f <commit>
    ```
-
 50. Push tag
-
    ```bash
-git push origin <tag_name>
+      git push origin <tag_name>
    ```
-
 51. Push all tags
-
    ```bash
-git push origin <branch_name> --tags
+      git push origin <branch_name> --tags
    ```
-
 52. Delete remote tag
-
    ```bash
-git push origin :<tag_name>
+      git push origin :<tag_name>
    ```
-
 ## 9. Reset & Reflog
-
 53. Time travel back
-
    ```bash
-git reset HEAD^
-git reset HEAD~n
+      git reset HEAD^
+      git reset HEAD~n
    ```
-
 54. View reflog
-
    ```bash
-git reflog
+      git reflog
    ```
